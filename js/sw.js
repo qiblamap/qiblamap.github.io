@@ -1,0 +1,1 @@
+// fake service worker for enable "App Install Banner"

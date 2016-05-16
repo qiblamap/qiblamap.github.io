@@ -1,0 +1,22 @@
+{
+  "short_name": "QiblaMap",
+  "name": "🕋 QiblaMap🚩",
+  "icons": [
+    {
+      "src": "img/QiblaMaps_icon48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/QiblaMaps_icon96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/QiblaMaps_icon144.png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#B2D0FE",
+  "display": "standalone",
+  "theme_color": "#ff5722"
+}
