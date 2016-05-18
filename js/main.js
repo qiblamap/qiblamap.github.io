@@ -260,11 +260,11 @@ function checkURL(){
 		
 		try {
 			if(hashArray.length>=4){
-				if(parseFloat(hashArray[1], 10)<-90  || parseFloat(hashArray[1], 10) > 90){
+				if(isNaN(parseFloat(hashArray[1], 10)) || parseFloat(hashArray[1], 10)<-90  || parseFloat(hashArray[1], 10) > 90){
 					isOK = false;
 				}
 				
-				if(parseFloat(hashArray[2], 10)<-180  || parseFloat(hashArray[2], 10) > 180){
+				if(isNaN(parseFloat(hashArray[2], 10) || (parseFloat(hashArray[2], 10)<-180  || parseFloat(hashArray[2], 10) > 180)){
 					isOK = false;
 				}
 				
