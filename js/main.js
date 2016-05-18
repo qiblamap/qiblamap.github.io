@@ -264,7 +264,7 @@ function checkURL(){
 					isOK = false;
 				}
 				
-				if(isNaN(parseFloat(hashArray[2], 10) || (parseFloat(hashArray[2], 10)<-180  || parseFloat(hashArray[2], 10) > 180)){
+				if(isNaN(parseFloat(hashArray[2], 10)) || parseFloat(hashArray[2], 10)<-180  || parseFloat(hashArray[2], 10) > 180){
 					isOK = false;
 				}
 				
