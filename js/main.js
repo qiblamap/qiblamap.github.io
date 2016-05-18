@@ -275,19 +275,21 @@ function checkURL(){
 				if(isOK){
 					map.panTo(new google.maps.LatLng(hashArray[1], hashArray[2]));
 					map.setZoom(parseInt(hashArray[3],10));
+					
+					if(hashArray[4] != undefined && hashArray[4].toUpperCase() == "HYBRID"){
+						map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+					}
+					
+					if(hashArray[5] != undefined  ){ //TODO : test if heading is a number
+						map.setOptions({"heading":parseInt(hashArray[5],10)});
+					}
+					
+					if(hashArray[6] != undefined  ){ //TODO : test if tilt is a number
+						map.setTilt(parseInt(hashArray[6],10));
+					}
 				}
 				
-				if(hashArray[4] != undefined && hashArray[4].toUpperCase() == "HYBRID"){
-					map.setMapTypeId(google.maps.MapTypeId.HYBRID);
-				}
-				
-				if(hashArray[5] != undefined  ){ //TODO : test if heading is a number
-					map.setOptions({"heading":parseInt(hashArray[5],10)});
-				}
-				
-				if(hashArray[6] != undefined  ){ //TODO : test if tilt is a number
-					map.setTilt(parseInt(hashArray[6],10));
-				}
+			
 			}else{
 				getGPS();
 			}
