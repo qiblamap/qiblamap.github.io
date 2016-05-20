@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('load', function () {
 	// fake service worker for enable "App Install Banner"
 	if ('serviceWorker' in navigator) {
-	  navigator.serviceWorker.register('js/sw.js', { scope: './' })
+	   navigator.serviceWorker.register('js/sw.js', { scope: './' })
 	        .then(function(r) {
 	          console.log('registered service worker');
 	        })
@@ -27,6 +27,10 @@ document.addEventListener('load', function () {
 	          console.error('uh oh... ');
 	          console.error(whut);
 	        });
+	        
+	   window.addEventListener('beforeinstallprompt', function(e) {
+	        console.log('beforeinstallprompt Event fired');
+	      });
 	}
 	// end : fake service worker for enable "App Install Banner"
 });
