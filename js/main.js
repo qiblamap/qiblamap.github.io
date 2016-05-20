@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	window.onresize = function(event) {
     	document.querySelector("#map").style.height = document.body.clientHeight +"px";
 	};
-	
+});
+
+document.addEventListener('load', function () {
 	// fake service worker for enable "App Install Banner"
 	if ('serviceWorker' in navigator) {
 	  navigator.serviceWorker.register('js/sw.js', { scope: './' })
