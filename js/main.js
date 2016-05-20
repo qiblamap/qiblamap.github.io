@@ -14,19 +14,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	window.onresize = function(event) {
     	document.querySelector("#map").style.height = document.body.clientHeight +"px";
 	};
+	
+	// fake service worker for enable "App Install Banner"
+	if ('serviceWorker' in navigator) {
+	  navigator.serviceWorker.register('js/sw.js', { scope: './' })
+	        .then(function(r) {
+	          console.log('registered service worker');
+	        })
+	        .catch(function(whut) {
+	          console.error('uh oh... ');
+	          console.error(whut);
+	        });
+	}
+	// end : fake service worker for enable "App Install Banner"
 });
 
-// fake service worker for enable "App Install Banner"
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('js/sw.js').then(function(registration) {
-    // Registration was successful
-    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-  }).catch(function(err) {
-    // registration failed :(
-    console.log('ServiceWorker registration failed: ', err);
-  });
-}
-// end : fake service worker for enable "App Install Banner"
+
 
 var map, markerUser, markerQibla, maxZoomService;
 var poly, geodesicPoly;
